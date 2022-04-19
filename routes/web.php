@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\ArticleController;
 use Illuminate\Http\Request;
 
 /*
@@ -22,3 +23,6 @@ Route::get('search', [MahasiswaController::class, 'search'])->name('search');
 
 // Latihan JS 9 (Langkah 10)
 Route::get('mahasiswa/nilai/{nim}', [MahasiswaController::class, 'nilai'])->name('nilai');
+
+// Praktikum 1 JS 10 (Langkah 6)
+Route::resource('articles', ArticleController::class);
