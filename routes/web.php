@@ -26,3 +26,6 @@ Route::get('mahasiswa/nilai/{nim}', [MahasiswaController::class, 'nilai'])->name
 
 // Praktikum 1 JS 10 (Langkah 6)
 Route::resource('articles', ArticleController::class);
+
+// Praktikum 3 JS 10 (Langkah 3)
+Route::get('/article/cetak_pdf', [ArticleController::class, 'cetak_pdf']);
