@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use PDF; //Praktikum 3 JS 10 (Langkah 5)
 
 class ArticleController extends Controller
 {
@@ -109,5 +110,13 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
+    }
+
+    // Praktikum 3 JS 10 (Langkah 4)
+    public function cetak_pdf()
+    {
+        $articles = Article::all();
+        $pdf = PDF::loadview('articles.articles_pdf', ['articles' => $articles]);
+        return $pdf->stream();
     }
 }
